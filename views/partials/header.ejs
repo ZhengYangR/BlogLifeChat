@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Blog App</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css">
+         <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    </head>
+    <body>
+        <di class="ui fixed invented menu" >
+            <di class="ui container" >
+                <div class="header item" ><i class="code icon" ></i>Blog site</div>
+                <a href="/" class="item" >Home</a>
+                <%if(!currentUser){%>
+                    <a href="/register" class="item" >Sign Up</a>
+                    <a href="/login" class="item" >Login</a>
+                <%}else {%>
+                    <li>Welcome back <%=currentUser.username%>!</li>
+                    <a href="/logout" class="item" >Logout</a>
+                <%}%>
+                <a href="/blogs/new" class="item" >New Post</a>
+            </di>
+        </di>
