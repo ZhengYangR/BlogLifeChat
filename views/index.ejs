@@ -16,7 +16,7 @@
                     <span><%= eachBlog.created.toDateString() %></span>
                 </div>
                 <div class="description">
-                    <p><%= eachBlog.body%>...</p>
+                    <p><%- eachBlog.body.substring(0,50)%>...</p>
                 </div>
                 <div class="extra">
                     <a class="ui blue basic button" href="/blogs/<%= eachBlog._id %>"><%= eachBlog.title%>

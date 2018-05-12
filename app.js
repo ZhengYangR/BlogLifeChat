@@ -65,7 +65,7 @@ app.get("/", function(req,res){
 //we don't need to say' index.ejs'   
 app.get("/blogs", function(req,res){
 //--------------------------get current user-------------------
-    console.log(req.user);
+//    console.log(req.user);
     Blog.find({},function(err,blogs){
         if(err) {
            console.log("ERROR!");
