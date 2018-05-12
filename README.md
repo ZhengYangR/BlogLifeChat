@@ -1,5 +1,5 @@
 # YoMoment_blog
-This is a web techonolgy project demo from zheng for showing zheng's capibility of fast learning  and using new  technology for development purpose. such as NodeJS, Express, bootstrape, SemanticUI, JQuery, npm, API, mongoDB, Github, and so on. 
+This is a web techonolgy project demo from zheng for showing zheng's capability of fast learning  and using new  technology for development purposes.  technologies Used in this project inclueded NodeJS, Express, bootstrape, SemanticUI, JQuery, npm, API, mongoDB, Github, and so on. 
 
 Zheng can program on both:
 front-end(Css-SemanticUI)
