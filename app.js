@@ -31,9 +31,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//current User
+//------------make currentUser-req.user global variable to all-------------------
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
+    res.locals.HwaiTime = HwaiTimeAPI;
     next();
 });
 
@@ -93,7 +94,7 @@ app.post("/blogs", function(req,res){
     });
 });
 
-//SHOW 
+//SHOW Route
 app.get("/blogs/:id", function(req,res){
     
     Blog.findById(req.params.id,function(err,foundBlog){
@@ -106,7 +107,7 @@ app.get("/blogs/:id", function(req,res){
     });
 });
 
-//EDIT 
+//EDIT Route
 app.get("/blogs/:id/edit", function(req,res){
            Blog.findById(req.params.id,function(err,foundBlog){
         if(err) {
@@ -189,6 +190,24 @@ app.get("/logout", function(req,res){
 
 //--------------------------get current user-------------------
 // console.log(req.user); -> this will show current user
+
+//--------------------------API-------------------
+var request = require('request');
+var HwaiTimeAPI = "";
+request('https://query.yahooapis.com/v1/public/yql?q=select%20astronomy.sunset%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22maui%2C%20hi%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys', function (error, response, body) {
+  if(error) {
+      console.log("error");
+  }else{
+      console.log("");
+      if(response.statusCode == 200){
+          var parseData = JSON.parse(body);
+          console.log(parseData["query"]["results"]["channel"]["astronomy"]["sunset"]);
+          HwaiTimeAPI = parseData["query"]["results"]["channel"]["astronomy"]["sunset"];
+      }
+  }
+});
+
+
 
 
 //let local port run as server

@@ -5,17 +5,17 @@
          <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     </head>
     <body>
-        <di class="ui fixed invented menu" >
-            <di class="ui container" >
-                <div class="header item" ><i class="code icon" ></i>Zheng's Web Development Demo Site</div>
+        <div class="ui fixed invented menu" >
+            <div class="ui container" >
+                <div class="header item" ><i class="code icon" ></i>ValueMe - Zheng's Web Development Demo Site</div>
                 <a href="/" class="item" >Home</a>
                 <%if(!currentUser){%>
                     <a href="/register" class="item" >Sign Up</a>
                     <a href="/login" class="item" >Login</a>
                 <%}else {%>
-                    <li>Welcome back <%=currentUser.username%>!</li>
+                <li>Welcome back <h1 style="color:blue"><%=currentUser.username%></h1></li>
                     <a href="/logout" class="item" >Logout</a>
                 <%}%>
                 <a href="/blogs/new" class="item" >New Post</a>
-            </di>
-        </di>
+            </div>
+        </div>

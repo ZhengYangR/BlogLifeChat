@@ -1,4 +1,4 @@
-# YoMoment_blog
+# ValueMe_blog_CollegeVersion
 This is an open source  web  project  from zheng that allows everyone to join and contribute their ideas to it. 
 
 Purpose and Goal: 
