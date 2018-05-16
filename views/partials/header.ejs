@@ -3,6 +3,11 @@
         <title>Welcome to Zheng's Web Development</title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css">
          <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+        <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
         <div class="ui fixed invented menu" >
@@ -17,5 +22,6 @@
                     <a href="/logout" class="item" >Logout</a>
                 <%}%>
                 <a href="/blogs/new" class="item" >New Post</a>
+                <a href="/chat">Chat With Friends</a>
             </div>
         </div>

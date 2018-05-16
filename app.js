@@ -31,7 +31,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//------------make currentUser-req.user global variable to all-------------------
+//------------ currentUser global variable to all ejs-------------------
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
     res.locals.HwaiTime = HwaiTimeAPI;
@@ -212,3 +212,23 @@ request('https://query.yahooapis.com/v1/public/yql?q=select%20astronomy.sunset%2
 
 //let local port run as server
 app.listen(4000, () => console.log('started our app  on port 4000!'));
+
+
+//=========================== chat feature ================================
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+users = [];
+msglist = [];
+
+app.get("/chat", function(req, res){
+    res.render("chat", {msgVar: msglist});
+}); 
+
+app.post("/chat", function(req, res){
+        
+        var msg = req.body.chatArea;
+        msglist.push("[" + req.user.username + "]: " + msg);
+        res.redirect("chat");
+}); 
+
+

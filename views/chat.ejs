@@ -1,0 +1,23 @@
+<h1>Please Refresh this Page to See new messages :) </h1>
+<a href="/blogs" class="item" >Home</a>
+<!--sending request through form-->
+<form action="/chat" method="POST">
+    <!-- make a input box and button   -->
+    <textarea type="text" name="chatArea" placeholder="name"></textarea>
+    <button>Submit</button>
+</form>
+
+
+<% msgVar.forEach(function(eachFriend){%>
+    
+    <li><%=  eachFriend %></li>
+    
+<!--currentUser.username-->
+<%})%>
+
+
+
+
+
+
+
