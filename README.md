@@ -18,6 +18,8 @@ Project feature:
 3. delete image and text
 4. user able to sign up, sign in and logout blog
 5. page will display current sign in user information
+6. API - display time of hawaii
+7. Chat - allow users who signed in to chat with each other on the side
 
 ...
 more waiting for contribution
